@@ -30,7 +30,7 @@ pub fn linear(n: u64) -> Option<u64> {
             let mut fib_minus_1: u64 = 0;
             while i > 1 {
                 let temp = result;
-                result = fib_minus_1 + result;
+                result += fib_minus_1;
                 fib_minus_1 = temp;
                 i -= 1;
             }

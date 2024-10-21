@@ -4,7 +4,7 @@ use structopt::StructOpt;
 
 #[derive(StructOpt)]
 struct FibonacciCalc {
-    #[structopt(short = "n", long = "nth")]
+    #[structopt(short = "n", long = "nth", about = "n should be >=0")]
     nth: u64,
     #[structopt(short = "f", long = "function", default_value = "linear")]
     function: String,
@@ -12,7 +12,7 @@ struct FibonacciCalc {
 
 #[derive(StructOpt)]
 struct PrimeFinder {
-    #[structopt(short = "n", long = "number")]
+    #[structopt(short = "n", long = "number", about = "n < 2 wields no results")]
     number: u64,
     #[structopt(short = "f", long = "function", default_value = "functional")]
     function: String,

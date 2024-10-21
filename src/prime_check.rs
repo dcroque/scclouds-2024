@@ -1,13 +1,17 @@
 pub fn functional(p: u64) -> bool {
-    if p <= 1 {return false }
-    
+    if p <= 1 {
+        return false;
+    }
+
     let limit = ((p + 2) as f64).powf(0.5_f64).ceil() as u64;
     let test_vec: Vec<u64> = (2..limit).collect();
     test_vec.into_iter().map(|x| p % x).all(|x| x > 0)
 }
 
 pub fn recursive(p: u64) -> bool {
-    if p <= 1 {return false }
+    if p <= 1 {
+        return false;
+    }
 
     let limit = ((p + 2) as f64).powf(0.5_f64).ceil() as u64;
     match p {
@@ -27,7 +31,9 @@ pub fn recursive_helper(p: u64, l: u64, n: u64) -> bool {
 }
 
 pub fn linear(p: u64) -> bool {
-    if p <= 1 {return false }
+    if p <= 1 {
+        return false;
+    }
 
     let limit = ((p + 2) as f64).powf(0.5_f64).ceil() as u64;
     for i in 2..limit {

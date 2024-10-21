@@ -42,12 +42,9 @@ pub fn linear(p: u64) -> Vec<u64> {
             for i in 3..p + 1 {
                 let mut is_prime = true;
                 for n in result.as_slice() {
-                    match i % n {
-                        0 => {
-                            is_prime = false;
-                            continue;
-                        }
-                        _ => (),
+                    if i % n == 0 {
+                        is_prime = false;
+                        continue;
                     }
                 }
                 if is_prime {
